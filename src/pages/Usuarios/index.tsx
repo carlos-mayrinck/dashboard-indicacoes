@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
-import { HiOutlineDotsVertical } from "react-icons/hi";
-
 import { Container } from "./styles";
 
 interface User {
@@ -48,7 +46,7 @@ export function Usuarios() {
                   <p>{user.role}</p>
                 </td>
                 <td>
-                  <button type="button"><HiOutlineDotsVertical /></button>
+                  <button type="button"></button>
                 </td>
               </tr>
             ))

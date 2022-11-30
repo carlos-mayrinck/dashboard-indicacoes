@@ -1,5 +1,4 @@
 import { createServer, Model } from "miragejs";
-import { IndicationsProvider } from "./hooks/useIndications";
 
 import { Router } from "./routes";
 
@@ -102,9 +101,9 @@ export function App() {
   })
 
   return (
-    <IndicationsProvider>
+    <>
       <Router />
       <GlobalStyle />
-    </IndicationsProvider>
+    </>
   );
 }

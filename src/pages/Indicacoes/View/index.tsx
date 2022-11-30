@@ -30,7 +30,6 @@ export function View() {
             <p><strong>Telefone: </strong>{indication.phone}</p>
             <p><strong>Segmento: </strong>{indication.segment}</p>
             <p><strong>Produto indicado: </strong>{indication.product}</p>
-            <p><strong>Produto indicado: </strong>{indication.product}</p>
           </div>
           <div>
             <p><strong>Nível de interesse: </strong>{indication.interest}</p>

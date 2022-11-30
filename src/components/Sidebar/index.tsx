@@ -12,8 +12,6 @@ export function Sidebar() {
 
         <NavLink to="/indicacoes">Indicações</NavLink>
 
-        <NavLink to="/conversoes">Conversões</NavLink>
-
         <NavLink to="/usuarios">Usuários</NavLink>
       </Nav>
     </SidebarMenu>
