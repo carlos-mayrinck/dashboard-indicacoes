@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "../components/Layout";
@@ -14,7 +12,7 @@ export function AppRoutes() {
     <Layout>
       <Routes>
         <Route path="/indicacoes" element={<Indicacoes />} />
-        <Route path="/indicacoes/view/:id" element={<View />}/>
+        <Route path="/indicacoes/view/:id" element={<View />} />
 
         <Route path="/usuarios" element={<Usuarios />} />
 

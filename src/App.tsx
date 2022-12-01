@@ -1,15 +1,16 @@
 import { createServer, Model } from "miragejs";
+import { IndicationsProvider } from "./hooks/useIndications";
 
 import { Router } from "./routes";
 
 import { GlobalStyle } from "./styles/global";
 
 export function App() {
-  
+
   createServer({
     models: {
-     indication: Model,
-     user: Model,
+      indication: Model,
+      user: Model,
     },
 
     seeds(server) {
@@ -27,7 +28,7 @@ export function App() {
             channel: "whatsapp",
             source: "Indicacao interna",
             ambassador: 1,
-            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("10-20-2022 10:00:00"))
+            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("02-10-2022 10:00:00"))
           },
           {
             id: 2,
@@ -66,7 +67,7 @@ export function App() {
             email: "carlos.mendes@email.com.br",
             password: "12345",
             role: "admin",
-            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("10-20-2022 10:00:00"))
+            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("02-10-2022 10:00:00"))
           },
           {
             id: 2,
@@ -101,9 +102,9 @@ export function App() {
   })
 
   return (
-    <>
+    <IndicationsProvider>
       <Router />
       <GlobalStyle />
-    </>
+    </IndicationsProvider>
   );
 }
