@@ -3,6 +3,11 @@ import { lighten } from "polished";
 
 export const FormContainer = styled.div`
   padding: 1rem;
+  background: var(--shape);
+
+  h2 {
+    color: var(--white);
+  }
 
   form {
 
@@ -20,6 +25,7 @@ export const FormContainer = styled.div`
         margin-right: 1rem;
         
         label {
+          color: var(--white);
           font-size: 0.85rem;
           line-height: 1rem;
           font-weight: 700;
@@ -29,7 +35,7 @@ export const FormContainer = styled.div`
             height: 2rem;
             padding: 0.5rem;
             border-radius: 0.25rem;
-            border: solid 1px var(--text-secondary);
+            border: solid 1px #353646;
           }
   
           svg {

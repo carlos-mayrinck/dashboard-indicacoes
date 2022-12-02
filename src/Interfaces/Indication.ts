@@ -9,6 +9,12 @@ export interface Indication {
   interest: string;
   channel: "email" | 'whatsapp';
   source: string;
-  ambassador: number;
+  stage: string;
+  ambassador: {
+    id: number;
+    name: string;
+    email: string;
+    department: string;
+  };
   createdAt: string;
 }

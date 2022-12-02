@@ -6,7 +6,7 @@ export const Table = styled.table`
   border-radius: 0.5rem;
 
   th {
-    color: var(--text-secondary);
+    color: var(--white);
     font-size: 1rem;
     line-height: 1.5rem;
     text-align: left;
@@ -14,12 +14,11 @@ export const Table = styled.table`
   }
   
   tbody {
-    
     td {
       padding: 0.5rem 1rem;
-      background: var(--white);
-      color: var(--text-title);
-      border-top: solid 1px var(--text-secondary);
+      background: var(--shape);
+      color: var(--white);
+      border-top: solid 1px #353646;
       
       strong {
         display: block;
@@ -32,7 +31,7 @@ export const Table = styled.table`
         display: block;
         font-size: 0.8rem;
         line-height: 1rem;
-        color: var(--text-secondary);
+        color: var(--white);
       }
 
       a {

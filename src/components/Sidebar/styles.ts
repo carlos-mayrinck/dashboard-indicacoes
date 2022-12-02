@@ -4,13 +4,14 @@ import { transparentize } from "polished";
 export const SidebarMenu = styled.div`
   grid-area: sidebar;
   background: var(--shape);
+  position: relative;
 
   h1 {
     font-size: 1.5rem;
-    color: var(--text-secondary);
+    color: var(--white);
     font-weight: 500;
     margin-left: 1rem;
-    line-height: 100px;
+    line-height: 70px;
   }
 `;
 
@@ -20,15 +21,15 @@ export const Nav = styled.nav`
     display: block;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--white);
     padding: 1.5rem;
 
     transition: all 0.2s;
 
     &:hover, &.active {
-      color: var(--text-selected);
-      background: ${transparentize(0.8, "#9FA2B4")};
-      border-left: solid 3px var(--text-selected);
+      color: var(--white);
+      background: ${transparentize(0.9, "#ffffff")};
+      border-left: solid 4px var(--confirm);
     }
   }
 `;

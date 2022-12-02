@@ -1,5 +1,4 @@
 import { createServer, Model } from "miragejs";
-import { IndicationsProvider } from "./hooks/useIndications";
 
 import { Router } from "./routes";
 
@@ -27,8 +26,14 @@ export function App() {
             interest: "Muito interessado",
             channel: "whatsapp",
             source: "Indicacao interna",
-            ambassador: 1,
-            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("02-10-2022 10:00:00"))
+            stage: "MQL",
+            ambassador: {
+              id: 1,
+              name: "José Luiz",
+              email: "jose.luiz@email.com",
+              department: "Desenvolvimento",
+            },
+            createdAt: new Date("02-10-2022 10:00:00")
           },
           {
             id: 2,
@@ -41,8 +46,14 @@ export function App() {
             interest: "Medio",
             channel: "email",
             source: "Indicacao interna",
-            ambassador: 2,
-            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("10-10-2022 12:00:00"))
+            stage: "MQL",
+            ambassador: {
+              id: 2,
+              name: "Luis Roberto",
+              email: "luis.roberto@email.com",
+              department: "Comercial",
+            },
+            createdAt: new Date("10-10-2022 12:00:00")
           },
           {
             id: 3,
@@ -55,8 +66,34 @@ export function App() {
             interest: "Muito interessado",
             channel: "email",
             source: "Indicacao interna",
-            ambassador: 2,
-            createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("11-02-2022 15:00:00"))
+            stage: "OPP",
+            ambassador: {
+              id: 2,
+              name: "Luis Roberto",
+              email: "luis.roberto@email.com",
+              department: "Comercial",
+            },
+            createdAt: new Date("11-02-2022 15:00:00")
+          },
+          {
+            id: 4,
+            name: "Carlos Eduardo",
+            email: "carlos@gmail.com",
+            phone: "3199999-9999",
+            company: "Empresa",
+            segment: "Shopping",
+            product: "Group Shopping",
+            interest: "Medio",
+            channel: "email",
+            source: "Indicacao interna",
+            stage: "Aprovado Financeiro",
+            ambassador: {
+              id: 3,
+              name: "João Cesar",
+              email: "joao.cesar@email.com",
+              department: "Marketing",
+            },
+            createdAt: new Date("11-04-2022 15:00:00")
           },
         ],
         users: [
@@ -102,9 +139,9 @@ export function App() {
   })
 
   return (
-    <IndicationsProvider>
+    <>
       <Router />
       <GlobalStyle />
-    </IndicationsProvider>
+    </>
   );
 }

@@ -14,10 +14,12 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
+    "apexcharts": "^3.36.3",
     "axios": "^1.2.0",
     "miragejs": "^0.1.46",
     "polished": "^4.2.2",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",

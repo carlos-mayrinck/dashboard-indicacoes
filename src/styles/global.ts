@@ -3,17 +3,19 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   
   :root {
-    --background: #F7F8FC;
-    --shape: #363740;
-
-    --text-title: #252733;
-    --text-secondary: #9FA2B4;
+    --background: #181B23;
+    --shape: #1F2029;
+    
     --text-selected: #DDE2FF;
+    
+    --confirm: #3083DC;
+    --success: #248232;
+    --danger: #FF220C;
 
-    --success: #3751FF;
+    --border: #353646;
 
-    --black: #000000;
-    --white: #FFFFFF;
+    --black: #181B23;
+    --white: #EEEEF2;
   }
 
   * {
@@ -33,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html, input, textarea, button {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
 

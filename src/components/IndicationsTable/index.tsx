@@ -35,7 +35,9 @@ export function IndicationsTable() {
                 <span className="telefone">{indication.channel}</span>
               </td>
               <td>
-                <p>{indication.ambassador}</p>
+                <strong>{indication.ambassador.name}</strong>
+                <span>{indication.ambassador.email}</span>
+                <span>{indication.ambassador.department}</span>
               </td>
               <td>
                 <p>{indication.source}</p>

@@ -1,4 +1,5 @@
 import { createContext, Dispatch, SetStateAction, ReactNode, useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import { Indication } from "../Interfaces/Indication";
 import { api } from "../services/api";
 
@@ -16,11 +17,15 @@ const IndicationsContext = createContext<IndicationsContextData>({} as Indicatio
 export function IndicationsProvider({ children }: IndicationsProviderProps) {
 
   const [indications, setIndications] = useState<Indication[]>([]);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    api.get("/indications")
-      .then(response => setIndications(response.data.indications));
-  }, []);
+    if (pathname === "/indicacoes" || pathname === "/") {
+      api.get("/indications")
+        .then(response => setIndications(response.data.indications));
+    }
+
+  }, [pathname]);
 
   return (
     <IndicationsContext.Provider value={{ indications, setIndications }}>
