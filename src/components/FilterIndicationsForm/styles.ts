@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lighten } from "polished";
+import { lighten, transparentize } from "polished";
 
 export const FormContainer = styled.div`
   padding: 1rem;
@@ -36,6 +36,12 @@ export const FormContainer = styled.div`
             padding: 0.5rem;
             border-radius: 0.25rem;
             border: solid 1px #353646;
+            background: ${transparentize(0.9, "#ffffff")};
+            color: var(--white);
+          }
+
+          option {
+            color: var(--black);
           }
   
           svg {

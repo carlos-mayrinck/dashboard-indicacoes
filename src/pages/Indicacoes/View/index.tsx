@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom";
+import { PageTitle } from "../../../components/PageTitle";
 import { Indication } from "../../../Interfaces/Indication";
 import { api } from "../../../services/api";
 
 import { Container, ContentContainer } from "./styles";
 
 
-export function View() {
+export function ViewIndicacao() {
 
   const [indication, setIndication] = useState<Indication>({} as Indication);
   const { id } = useParams();
@@ -18,6 +19,7 @@ export function View() {
 
   return (
     <Container>
+      <PageTitle>Detalhes da indicação</PageTitle>
       <Link to="/indicacoes">Voltar</Link>
 
       <ContentContainer>

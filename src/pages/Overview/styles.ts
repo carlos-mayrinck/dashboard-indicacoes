@@ -2,11 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.main`
 
-  h2 {
-    color: var(--white);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
 `;
 
 export const ContentContainer = styled.div`

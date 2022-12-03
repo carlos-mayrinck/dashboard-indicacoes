@@ -1,5 +1,6 @@
 import { FilterIndicationsForm } from "../../components/FilterIndicationsForm";
 import { IndicationsTable } from "../../components/IndicationsTable";
+import { PageTitle } from "../../components/PageTitle";
 
 import { Container, ContentContainer } from "./styles";
 
@@ -8,7 +9,7 @@ export function Indicacoes() {
 
   return (
     <Container>
-      <h1>Indicações</h1>
+      <PageTitle>Indicações</PageTitle>
       <ContentContainer>
         <FilterIndicationsForm />
 

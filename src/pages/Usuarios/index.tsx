@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { Link } from "react-router-dom";
+import { BiDotsVerticalRounded } from "react-icons/bi";
 
-import { Container } from "./styles";
+import { api } from "../../services/api";
+import { Container, ContentContainer, Table } from "./styles";
+import { PageTitle } from "../../components/PageTitle";
 
 interface User {
   id: number;
@@ -24,35 +27,42 @@ export function Usuarios() {
 
   return (
     <Container>
-      <table>
-        <thead>
-          <tr>
-            <th>Usuário</th>
-            <th>Role</th>
-            <th>Opções</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            users.map(user => (
+      <PageTitle>Usuários</PageTitle>
 
-              <tr key={user.id}>
-                <td>
-                  <strong>{user.name}</strong>
-                  <p>{user.username}</p>
-                  <p>{user.email}</p>
-                </td>
-                <td>
-                  <p>{user.role}</p>
-                </td>
-                <td>
-                  <button type="button"></button>
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+      <ContentContainer>
+        <Table>
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>Role</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              users.map(user => (
+                <tr key={user.id}>
+                  <td>
+                    <Link to={`view/${user.id}`}><strong>{user.name}</strong></Link>
+                    <p>{user.username}</p>
+                    <p>{user.email}</p>
+                  </td>
+                  <td>
+                    <span>{user.role}</span>
+                  </td>
+                  <td>
+                    <button
+                      type="button"
+                    >
+                      <BiDotsVerticalRounded />
+                    </button>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </Table>
+      </ContentContainer>
     </Container>
   );
 }

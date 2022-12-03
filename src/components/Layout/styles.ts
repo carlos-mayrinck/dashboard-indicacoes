@@ -15,4 +15,5 @@ export const ContentContainer = styled.div`
   grid-area: contentContainer;
   padding: 1rem;
   background: var(--background);
+  box-shadow: inset 0 0 8px #00000050;
 `;

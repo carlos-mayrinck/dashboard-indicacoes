@@ -3,6 +3,7 @@ import { useIndications } from "../../hooks/useIndications";
 
 import Chart from "react-apexcharts";
 import { Container, ContentContainer } from "./styles";
+import { PageTitle } from "../../components/PageTitle";
 
 export function Overview() {
 
@@ -36,7 +37,7 @@ export function Overview() {
 
   return (
     <Container>
-      <h2>Overview</h2>
+      <PageTitle>Overview</PageTitle>
 
       <ContentContainer>
         <section>

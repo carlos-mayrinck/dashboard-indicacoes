@@ -103,6 +103,7 @@ export function App() {
             username: "carlos.mendes",
             email: "carlos.mendes@email.com.br",
             password: "12345",
+            department: "Desenvolvimento",
             role: "admin",
             createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("02-10-2022 10:00:00"))
           },
@@ -112,7 +113,8 @@ export function App() {
             username: "john.doe",
             email: "john.doe@email.com.br",
             password: "12345",
-            role: "admin",
+            department: "Sales",
+            role: "user",
             createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("10-22-2022 16:00:00"))
           },
         ]
@@ -122,18 +124,28 @@ export function App() {
     routes() {
       this.namespace = "api";
 
+      // GET ALL INDICATIONS
       this.get("indications", () => {
         return this.schema.all("indication");
       });
 
+      // GET INDICATION BY ID
       this.get("indications/:id", (schema, request) => {
-        let id = request.params.id;
+        let { id } = request.params;
 
         return this.schema.find("indication", id);
-      })
+      });
 
+      // GET ALL USERS
       this.get("users", () => {
         return this.schema.all("user");
+      });
+
+      // GET USER BY ID
+      this.get("users/:id", (schema, request) => {
+        let { id } = request.params;
+
+        return this.schema.find("user", id);
       })
     },
   })

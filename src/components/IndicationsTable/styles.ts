@@ -1,3 +1,4 @@
+import { darken } from "polished";
 import styled from "styled-components";
 
 export const Table = styled.table`
@@ -31,7 +32,7 @@ export const Table = styled.table`
         display: block;
         font-size: 0.8rem;
         line-height: 1rem;
-        color: var(--white);
+        color: ${darken(0.2, "#EEEEF2")};
       }
 
       a {
