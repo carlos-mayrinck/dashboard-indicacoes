@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
+import { User } from "../../Interfaces/User";
+import { Link } from "react-router-dom";
 
 import { api } from "../../services/api";
 import { Container, ContentContainer, Table } from "./styles";
 import { PageTitle } from "../../components/PageTitle";
-
-interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  password: string;
-  role: string;
-  createdAt: string;
-}
 
 export function Usuarios() {
 
@@ -43,7 +34,7 @@ export function Usuarios() {
               users.map(user => (
                 <tr key={user.id}>
                   <td>
-                    <Link to={`view/${user.id}`}><strong>{user.name}</strong></Link>
+                    <Link to={`ver/${user.id}`}><strong>{user.name}</strong></Link>
                     <p>{user.username}</p>
                     <p>{user.email}</p>
                   </td>

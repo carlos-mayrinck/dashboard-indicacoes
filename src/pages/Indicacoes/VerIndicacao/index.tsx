@@ -7,7 +7,7 @@ import { api } from "../../../services/api";
 import { Container, ContentContainer } from "./styles";
 
 
-export function ViewIndicacao() {
+export function VerIndicacao() {
 
   const [indication, setIndication] = useState<Indication>({} as Indication);
   const { id } = useParams();

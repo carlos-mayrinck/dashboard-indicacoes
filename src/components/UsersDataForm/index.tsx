@@ -11,7 +11,7 @@ interface UsersDataFormProps {
 export function UsersDataForm({ user }: UsersDataFormProps) {
   
   const { pathname } = useLocation();
-  let isEditable = pathname.startsWith("/usuarios/edit");
+  let isEditable = pathname.startsWith("/usuarios/editar");
 
   return (
     <Form>

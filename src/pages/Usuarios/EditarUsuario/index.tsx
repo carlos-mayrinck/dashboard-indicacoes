@@ -3,11 +3,11 @@ import { api } from "../../../services/api";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
-import { Container, ContentContainer } from "./styles";
+import { Container, ContentContainer } from "../shared";
 import { PageTitle } from "../../../components/PageTitle";
 import { UsersDataForm } from "../../../components/UsersDataForm";
 
-export function ViewUsuario() {
+export function EditarUsuario() {
 
   const { id } = useParams();
 
@@ -21,14 +21,12 @@ export function ViewUsuario() {
 
   return (
     <Container>
-      <PageTitle>Visualizar usuário</PageTitle>
+      <PageTitle>Editar usuário</PageTitle>
 
       <Link to="/usuarios">Voltar</Link>
 
       <ContentContainer>
         <h3>{user.name}</h3>
-
-        <Link to={`/usuarios/edit/${user.id}`}>Editar</Link>
 
         <UsersDataForm user={user} />
       </ContentContainer>

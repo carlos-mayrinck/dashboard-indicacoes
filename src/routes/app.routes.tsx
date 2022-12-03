@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "../components/Layout";
 import { Indicacoes } from "../pages/Indicacoes";
-import { ViewIndicacao } from "../pages/Indicacoes/View";
+import { VerIndicacao } from "../pages/Indicacoes/VerIndicacao";
 import { Overview } from "../pages/Overview";
 import { Usuarios } from "../pages/Usuarios";
-// import { EditUsuario } from "../pages/Usuarios/Edit";
-import { ViewUsuario } from "../pages/Usuarios/View";
+// import { EditarUsuario } from "../pages/Usuarios/Edit";
+import { VerUsuario } from "../pages/Usuarios/VerUsuario";
 
 export function AppRoutes() {
 
@@ -14,11 +14,11 @@ export function AppRoutes() {
     <Layout>
       <Routes>
         <Route path="/indicacoes" element={<Indicacoes />} />
-        <Route path="/indicacoes/view/:id" element={<ViewIndicacao />} />
+        <Route path="/indicacoes/ver/:id" element={<VerIndicacao />} />
 
         <Route path="/usuarios" element={<Usuarios />} />
-        <Route path="/usuarios/view/:id" element={<ViewUsuario />} />
-        {/* <Route path="/usuarios/edit/:id" element={<EditUsuario />} /> */}
+        <Route path="/usuarios/ver/:id" element={<VerUsuario />} />
+        {/* <Route path="/usuarios/editar/:id" element={<EditarUsuario />} /> */}
 
         <Route path="/" element={<Overview />} />
       </Routes>

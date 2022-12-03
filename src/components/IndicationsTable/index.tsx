@@ -28,7 +28,7 @@ export function IndicationsTable() {
                 <p>{indication.id}</p>
               </td>
               <td className="indicacao">
-                <strong className="nome"><Link to={`view/${indication.id}`}>{indication.name}</Link></strong>
+                <strong className="nome"><Link to={`ver/${indication.id}`}>{indication.name}</Link></strong>
                 <span className="empresa">{indication.company}</span>
                 <span className="vertical">{indication.segment}</span>
                 <span className="telefone">{indication.phone}</span>
@@ -52,7 +52,7 @@ export function IndicationsTable() {
                 }).format(new Date(indication.createdAt))}</p>
               </td>
               <td>
-                <Link to={`view/${indication.id}`}>Ver mais</Link>
+                <Link to={`ver/${indication.id}`}>Ver mais</Link>
               </td>
             </tr>
           ))
