@@ -5,7 +5,7 @@ import { Indicacoes } from "../pages/Indicacoes";
 import { VerIndicacao } from "../pages/Indicacoes/VerIndicacao";
 import { Overview } from "../pages/Overview";
 import { Usuarios } from "../pages/Usuarios";
-// import { EditarUsuario } from "../pages/Usuarios/Edit";
+import { EditarUsuario } from "../pages/Usuarios/EditarUsuario";
 import { VerUsuario } from "../pages/Usuarios/VerUsuario";
 
 export function AppRoutes() {
@@ -18,7 +18,7 @@ export function AppRoutes() {
 
         <Route path="/usuarios" element={<Usuarios />} />
         <Route path="/usuarios/ver/:id" element={<VerUsuario />} />
-        {/* <Route path="/usuarios/editar/:id" element={<EditarUsuario />} /> */}
+        <Route path="/usuarios/editar/:id" element={<EditarUsuario />} />
 
         <Route path="/" element={<Overview />} />
       </Routes>

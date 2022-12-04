@@ -1,8 +1,11 @@
 import { createServer, Model } from "miragejs";
 
 import { Router } from "./routes";
+import Modal from "react-modal";
 
 import { GlobalStyle } from "./styles/global";
+
+Modal.setAppElement("#root");
 
 export function App() {
 
@@ -146,7 +149,17 @@ export function App() {
         let { id } = request.params;
 
         return this.schema.find("user", id);
-      })
+      });
+
+      // EDIT USER
+      // TO DO
+
+      // DELETE USER
+      this.del("users/:id", (schema, request) => {
+        const { id } = request.params;
+
+        return this.schema.find("user", id)?.destroy() as any;
+      }, {timing: 2000});
     },
   })
 

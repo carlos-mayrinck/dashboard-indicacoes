@@ -56,18 +56,23 @@ export const Table = styled.table`
         color: ${darken(0.2, "#eeeef2")};
       }
 
-      button {
-        border: none;
-        background: transparent;
-        color: var(--white);
-        font-size: 1.3rem;
-        margin-left: auto;
-        margin-right: 2rem;
-        display: block;
-        transition: filter 0.2s;
+      &.options {
+        text-align: right;
 
-        &:hover {
-          filter: brightness(0.7);
+        button, a {
+          display: inline-block;
+          width: 3rem;
+          height: 1.7rem;
+
+          font-size: 1rem;
+          line-height: 1.7rem;
+          text-align: center;
+          color: var(--white);
+
+          border: none;
+          border-radius: 0.25rem;
+          margin: 0 0.5rem;
+          box-shadow: 0 0 8px #00000070;
         }
       }
     }

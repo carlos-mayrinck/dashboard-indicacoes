@@ -9,7 +9,7 @@ interface UsersDataFormProps {
 }
 
 export function UsersDataForm({ user }: UsersDataFormProps) {
-  
+
   const { pathname } = useLocation();
   let isEditable = pathname.startsWith("/usuarios/editar");
 
@@ -17,32 +17,56 @@ export function UsersDataForm({ user }: UsersDataFormProps) {
     <Form>
       <div>
         <label>Nome:</label>
-        <input type="text" readOnly={!isEditable} defaultValue={user.name} />
+        <input
+          type="text"
+          readOnly={!isEditable}
+          defaultValue={user.name}
+        />
       </div>
 
       <div>
         <label>Username:</label>
-        <input type="text" readOnly defaultValue={user.username} />
+        <input
+          type="text"
+          readOnly
+          defaultValue={user.username}
+        />
       </div>
 
       <div>
         <label>E-mail:</label>
-        <input type="email" readOnly={!isEditable} defaultValue={user.email} />
+        <input
+          type="email"
+          readOnly={!isEditable}
+          defaultValue={user.email}
+        />
       </div>
 
       <div>
         <label>Senha:</label>
-        <input type="password" readOnly={!isEditable} defaultValue={user.password} />
+        <input
+          type="password"
+          readOnly={!isEditable}
+          defaultValue={user.password}
+        />
       </div>
 
       <div>
         <label>Setor:</label>
-        <input type="text" readOnly={!isEditable} defaultValue={user.department} />
+        <input
+          type="text"
+          readOnly={!isEditable}
+          defaultValue={user.department}
+        />
       </div>
 
       <div>
         <label>Role:</label>
-        <input type="text" readOnly={!isEditable} defaultValue={user.role} />
+        <input
+          type="text"
+          readOnly={!isEditable}
+          defaultValue={user.role}
+        />
       </div>
 
       {isEditable && <button type="submit">Salvar</button>}
