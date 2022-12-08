@@ -2,6 +2,7 @@ import { createServer, Model } from "miragejs";
 
 import { Router } from "./routes";
 import Modal from "react-modal";
+import { ToastContainer } from "react-toastify";
 
 import { GlobalStyle } from "./styles/global";
 
@@ -13,6 +14,10 @@ export function App() {
     models: {
       indication: Model,
       user: Model,
+    },
+
+    serializers: {
+      
     },
 
     seeds(server) {
@@ -127,8 +132,10 @@ export function App() {
     routes() {
       this.namespace = "api";
 
+      // this.timing = 2000;
+
       // GET ALL INDICATIONS
-      this.get("indications", () => {
+      this.get("indications", (schema) => {
         return this.schema.all("indication");
       });
 
@@ -140,7 +147,7 @@ export function App() {
       });
 
       // GET ALL USERS
-      this.get("users", () => {
+      this.get("users", (schema) => {
         return this.schema.all("user");
       });
 
@@ -152,7 +159,12 @@ export function App() {
       });
 
       // EDIT USER
-      // TO DO
+      this.put("users/:id", (schema, request) => {
+        const { id } = request.params;
+        const newAttr = JSON.parse(request.requestBody);
+
+        return this.schema.find("user", id)?.update(newAttr) as any;
+      }, {timing: 2000});
 
       // DELETE USER
       this.del("users/:id", (schema, request) => {
@@ -167,6 +179,7 @@ export function App() {
     <>
       <Router />
       <GlobalStyle />
+      <ToastContainer />
     </>
   );
 }

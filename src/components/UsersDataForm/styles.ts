@@ -14,7 +14,7 @@ export const Form = styled.form`
       margin-bottom: 0.3rem;
     }
 
-    input {
+    input, select {
       display: inline-block;
       width: 100%;
       max-width: 400px;
@@ -26,6 +26,16 @@ export const Form = styled.form`
       border-radius: 0.3rem;
       font-size: 0.9rem;
       color: var(--white);
+    }
+    option {
+      color: var(--black);
+    }
+
+    p {
+      margin-top: 0.3rem;
+      margin-bottom: 0;
+      color: var(--danger);
+      font-size: 0.8rem;
     }
   }
 

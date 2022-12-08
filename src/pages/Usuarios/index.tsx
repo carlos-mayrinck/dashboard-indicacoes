@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { User } from "../../Interfaces/User";
 
 import { ConfirmDeletingUserModal } from "../../components/ConfirmDeletingUserModal";
-import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
+import { FaEye, FaPencilAlt, FaPlus, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { PageTitle } from "../../components/PageTitle";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import { Container, ContentContainer, Table } from "./styles";
@@ -54,8 +54,13 @@ export function Usuarios() {
 
   return (
     <Container>
-      <PageTitle>Usuários</PageTitle>
+      <div>
+        <PageTitle>Usuários</PageTitle>
 
+        <Link to="criar" className="create-user-button">
+          Novo usuário <FaPlus />
+        </Link>
+      </div>
       <ContentContainer>
         <Table>
           <thead>
@@ -107,7 +112,6 @@ export function Usuarios() {
         </Table>
       </ContentContainer>
 
-      <ToastContainer />
       <ConfirmDeletingUserModal
         isOpen={isModalOpen}
         onRequestClose={handleClosingModalDeleteUser}

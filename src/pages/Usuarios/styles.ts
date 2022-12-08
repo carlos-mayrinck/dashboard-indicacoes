@@ -2,7 +2,37 @@ import styled from "styled-components";
 import { darken } from "polished";
 
 export const Container = styled.main`
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
 
+    .create-user-button {
+      display: inline-block;
+      height: 2.5rem;
+      width: 9rem;
+      border-radius: 0.25rem;
+
+      background: var(--confirm);
+      color: var(--white);
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 2.5rem;
+
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+
+      svg {
+        font-size: 0.7rem;
+        line-height: 0.7rem;
+        margin-bottom: 0;
+      }
+    }
+  }
 `;
 
 export const ContentContainer = styled.div`
