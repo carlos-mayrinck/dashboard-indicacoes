@@ -19,7 +19,6 @@ interface FormData {
   username: string;
   email: string;
   password: string;
-  department: string;
   role: string;
 }
 
@@ -39,8 +38,6 @@ export function UsersDataForm({ user }: UsersDataFormProps) {
     username: yup.string()
       .required("Este campo é obrigatório."),
     password: yup.string()
-      .required("Este campo é obrigatório."),
-    department: yup.string()
       .required("Este campo é obrigatório."),
     role: yup.string()
       .required("Este campo é obrigatório."),
@@ -75,7 +72,6 @@ export function UsersDataForm({ user }: UsersDataFormProps) {
     setValue("username", user.username);
     setValue("email", user.email);
     setValue("password", user.password);
-    setValue("department", user.department);
     setValue("role", user.role);
   }, [user]);
 
@@ -119,16 +115,6 @@ export function UsersDataForm({ user }: UsersDataFormProps) {
           {...register("password")}
         />
         {errors.password && <p>{errors.password.message}</p>}
-      </div>
-
-      <div>
-        <label>Setor:</label>
-        <input
-          type="text"
-          readOnly={!isEditable}
-          {...register("department")}
-        />
-        {errors.department && <p>{errors.department.message}</p>}
       </div>
 
       <div>

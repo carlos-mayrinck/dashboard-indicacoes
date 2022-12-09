@@ -1,4 +1,5 @@
 import { createServer, Model } from "miragejs";
+import { v4 as uuidv4 } from "uuid";
 
 import { Router } from "./routes";
 import Modal from "react-modal";
@@ -14,10 +15,6 @@ export function App() {
     models: {
       indication: Model,
       user: Model,
-    },
-
-    serializers: {
-      
     },
 
     seeds(server) {
@@ -111,7 +108,6 @@ export function App() {
             username: "carlos.mendes",
             email: "carlos.mendes@email.com.br",
             password: "12345",
-            department: "Desenvolvimento",
             role: "admin",
             createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("02-10-2022 10:00:00"))
           },
@@ -121,7 +117,6 @@ export function App() {
             username: "john.doe",
             email: "john.doe@email.com.br",
             password: "12345",
-            department: "Sales",
             role: "user",
             createdAt: new Intl.DateTimeFormat("pt-BR").format(new Date("10-22-2022 16:00:00"))
           },
@@ -131,8 +126,6 @@ export function App() {
 
     routes() {
       this.namespace = "api";
-
-      // this.timing = 2000;
 
       // GET ALL INDICATIONS
       this.get("indications", (schema) => {
@@ -145,6 +138,26 @@ export function App() {
 
         return this.schema.find("indication", id);
       });
+
+      // CREATE NEW USER
+      this.post("users", (schema, request) => {
+        const data = JSON.parse(request.requestBody);
+
+        const newUser = {
+          id: uuidv4(),
+          ...data,
+          createdAt: new Intl.DateTimeFormat("pt-BR", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          }).format(new Date())
+        }
+
+        return this.schema.create("user", newUser);
+      })
 
       // GET ALL USERS
       this.get("users", (schema) => {
@@ -164,14 +177,14 @@ export function App() {
         const newAttr = JSON.parse(request.requestBody);
 
         return this.schema.find("user", id)?.update(newAttr) as any;
-      }, {timing: 2000});
+      }, { timing: 2000 });
 
       // DELETE USER
       this.del("users/:id", (schema, request) => {
         const { id } = request.params;
 
         return this.schema.find("user", id)?.destroy() as any;
-      }, {timing: 2000});
+      }, { timing: 2000 });
     },
   })
 
