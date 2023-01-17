@@ -25,7 +25,9 @@ export function Login() {
   const { signIn } = useAuth();
 
   const handleLogin: SubmitHandler<FormData> = (data) => {
-    signIn(data.user, data.password);
+    const { user, password } = data;
+
+    signIn(user, password);
   }
 
   return (
