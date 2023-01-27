@@ -33,12 +33,12 @@ export const Container = styled.div`
       transition: filter 0.2s;
 
       & + button {
-        width: 6rem;
-        height: 3rem;
+        /* width: 6rem;
+        height: 3rem; */
         margin-left: 1rem;
         background: var(--danger);
-        line-height: 3rem;
-        font-size: 1.15rem;
+        /* line-height: 3rem;
+        font-size: 1.15rem; */
       }
 
       &:hover {
